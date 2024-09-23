@@ -13,11 +13,12 @@ Mr. Berg will look at all your files to determine what you have completed.  If t
 ## Reflection Questions
 
 1. What is your initial thoughts about the python programming language?
-
+It is weird because it is new to me as a java/javascript native. But, I like the simplicity of python.
 
 
 2. Describe some similarities and differences that you found between python and other programming languages you have used in the past?
-
+The main difference between python and java is the lack of initialization in python but they share a lot of the common characteristics of a coding language such as conditionals and variables.
 
 
 3. What are some things that you learned through this assignment?
+I learned how python uses indents as a way to tell if code is within a loop or conditional.

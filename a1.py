@@ -25,7 +25,10 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    raise NotImplementedError("absolute")
+    if n < 0:
+        return -1 * n
+    else:
+        return n 
 
 
 def factorial(n: int) -> int:
@@ -38,7 +41,12 @@ def factorial(n: int) -> int:
     Returns:
         factorial of the passed in number
     """
-    raise NotImplementedError("factorial")
+    result = 1
+    for x in range(1, n + 1):
+        result *= x
+        print(result)
+    return result
+
 
 
 T = TypeVar("T")
@@ -55,6 +63,12 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
+    new_lst = []
+    for i in range(len(lst)):
+        if i  % 2 == 0:
+            new_lst.append(lst[i])
+    return new_lst
+
     raise NotImplementedError("every_other")
 
 
@@ -68,6 +82,11 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
+    s = 0
+    for el in lst:
+        s += el
+    return s
+
     raise NotImplementedError("sum_list")
 
 
@@ -80,6 +99,15 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
+    mean = 0.0
+    numOfnum = 0
+    sum = 0
+    for i in range(len(lst)+1):
+        sum += i
+        numOfnum += 1
+    numOfnum -= 1
+    mean = sum/numOfnum
+    return mean
     raise NotImplementedError("mean")
 
 
@@ -95,6 +123,13 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
+    if len(lst) % 2 == 1:
+        return lst[len(lst)//2]
+    else:
+        in1 = len(lst)//2
+        in2 = in1 - 1
+        return (lst[in1] + lst[in2]) / 2
+
     raise NotImplementedError("median")
 
 
@@ -117,6 +152,21 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
+    i = 0 
+    current = "duck1"
+    while len(lst) > 2:
+        if current == "duck1":
+            current = "duck2"
+            i += 1
+        elif current == "duck2":
+            current = "goose"
+            i += 1
+        else:
+            current = "duck1"
+            lst.pop(i)
+        if i == len(lst):
+            i = 0
+    return lst 
     raise NotImplementedError("duck_duck_goose")
 
 
